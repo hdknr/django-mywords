@@ -3,3 +3,7 @@ django
 
 # Model
 django-ordered-model
+
+# REST
+djangorestframework
+djangorestframework-filters

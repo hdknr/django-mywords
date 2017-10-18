@@ -31,3 +31,7 @@ class Link(OrderedModel):
         verbose_name = _('Link')
         verbose_name_plural = _('Links')
         ordering = ['word', 'order', ]
+
+    @property
+    def url(self):
+        return self.content_object.get_absolute_url()
