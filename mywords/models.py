@@ -35,3 +35,7 @@ class Link(OrderedModel):
     @property
     def url(self):
         return self.content_object.get_absolute_url()
+
+    @property
+    def text(self):
+        return self.word and self.word.text

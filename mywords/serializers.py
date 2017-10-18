@@ -12,6 +12,7 @@ class WordSerializer(serializers.ModelSerializer):
 
 class LinkSerializer(serializers.ModelSerializer):
     url = serializers.ReadOnlyField()
+    text = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Link
