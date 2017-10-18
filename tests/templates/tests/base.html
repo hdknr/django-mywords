@@ -1,0 +1,91 @@
+{% load i18n mytemplates %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <title>{% block title %}{{ LANGUAGE_CODE }}{% endblock %}</title>
+  <meta charset="UTF-8">
+  {% block meta %}
+    <meta name="viewport" content="{% block viewport %}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="description" content="{% block description %}{% endblock %}">
+  {% endblock %}
+  {% block style %}{% endblock %}
+  {% mystyle %}
+  <link rel="stylesheet"  href="{% myasset 'css/hoge.css' %}" type="text/css" media="all">
+</head>
+<body>
+
+<header>{% block header %}
+
+       <nav>{% block nav %}
+       {% endblock %} </nav>
+
+{% endblock %}</header>
+
+<main>{% block main %}
+
+    <article>{% block article %}
+
+       {% block article_header %} <header>
+          <h1>{% block article_title %} {% endblock %}</h1>
+       </header> {% endblock %}
+
+       <div id="content"> {% block content %}
+          <section>
+               <h2> SECTION TITLE  #1 </h2>
+
+               <section>
+                     <h3>SUB SECTION TITLE #1-1</h3>
+
+                    <a href="{% myasset 'img/img.01' %}">
+                    <a href="{% myasset 'img/img.02' %}">
+                    <a href="{% myasset 'img/img.03' %}">
+                    <a href="{% myasset 'img/img.04' %}">
+                     ......
+              </section>
+
+               <section>
+                     <h3>SUB SECTION TITLE #1-2</h3>
+                     ......
+              </section>
+         </section>
+
+        <section>
+               <h2> SECTION TITLE  #2</h2>
+
+               <section>
+                     <h3>SUB SECTION TITLE #2-1</h3>
+                     ......
+              </section>
+
+               <section>
+                     <h3>SUB SECTION TITLE #2-2</h3>
+                     ......
+              </section>
+         </section>
+       {% endblock %}</div> {# section #}
+
+       <footer>{% block article_footer %}
+       {% endblock %}</footer>
+
+    {% endblock %}</article>
+
+   {% block aside %} <aside>
+      <div id="aside">
+        {% block aside_content %}
+        {% endblock %}
+      </div>
+    </aside> {% endblock %}
+
+{% endblock %}</main>
+
+
+<footer>{% block footer %}
+{% endblock %}</footer>
+
+{% block scripts %}{% endblock %}
+{% block tracking %}{% endblock %}
+
+</body>
+</html>

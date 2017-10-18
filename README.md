@@ -1,0 +1,3 @@
+# django-mywords
+
+- Word links
