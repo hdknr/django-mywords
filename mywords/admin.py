@@ -9,6 +9,7 @@ class LinkAdminInline(OrderedTabularInline):
     model = models.Link
     extra = 1
     readonly_fields = ['id', 'content_object',  'order', 'move_up_down_links', ]
+    raw_id_fields = ['content_type', ]
 
 
 @admin.register(models.Word)
