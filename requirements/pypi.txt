@@ -7,3 +7,6 @@ django-ordered-model
 # REST
 djangorestframework
 djangorestframework-filters
+
+# Markdown
+mistune
