@@ -4,9 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from ordered_model.models import OrderedModel
+from . import methods
 
 
-class Word(models.Model):
+class Word(models.Model, methods.Word):
     text = models.CharField(max_length=50, unique=True)
 
     class Meta:
