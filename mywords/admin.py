@@ -1,15 +1,20 @@
 # coding: utf-8
 
 from django.contrib import admin
+
 from ordered_model.admin import OrderedTabularInline
 from . import models
+
 
 
 class LinkAdminInline(OrderedTabularInline):
     model = models.Link
     extra = 1
-    readonly_fields = ['id', 'content_object',  'order', 'move_up_down_links', ]
+    readonly_fields = ['object_admin_url', 'order', 'move_up_down_links', ]
     raw_id_fields = ['content_type', ]
+
+    def object_admin_url(self, obj):
+        return obj.object_admin_url
 
 
 @admin.register(models.Word)

@@ -18,7 +18,7 @@ class Word(models.Model, methods.Word):
         return self.text
 
 
-class Link(OrderedModel):
+class Link(OrderedModel, methods.Link):
     word = models.ForeignKey(Word)
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
